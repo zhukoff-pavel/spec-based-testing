@@ -1,5 +1,5 @@
 import pytest
-import parser
+import spec_based_testing.parser as parser
 
 
 class LibSLMocker:
@@ -25,6 +25,8 @@ class LibSLMocker:
         return desc
 
 
-@pytest.fixture(scope="session")
-def libsl_mocker(session_mocker):
+def _libsl_mocker(session_mocker):
     return LibSLMocker(session_mocker)
+
+
+libsl_mocker = pytest.fixture(scope="session")(_libsl_mocker)

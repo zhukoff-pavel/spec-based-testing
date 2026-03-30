@@ -1,4 +1,4 @@
-from foo import bar, baz, string
+from example.foo import bar, baz, string
 
 
 class UsageExample:

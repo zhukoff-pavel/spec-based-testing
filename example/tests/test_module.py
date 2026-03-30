@@ -1,6 +1,8 @@
 import pytest
-import module
+import example.module as module
 import re
+
+from spec_based_testing import libsl_mocker
 
 
 def test_bar_mock(libsl_mocker):
@@ -20,7 +22,7 @@ def test_baz_mock(libsl_mocker):
 
 def test_string_mock(libsl_mocker):
     libsl_mocker("/foo/string.libsl")
-    
+
     res = module.UsageExample().use_string()
 
     assert re.match("[a-zA-Z0-9]{1,5}", res), res

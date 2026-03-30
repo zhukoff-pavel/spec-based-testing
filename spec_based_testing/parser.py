@@ -13,7 +13,7 @@ class Description:
 def parse_libsl(path) -> Description:
     match path:
         case "/foo/bar.libsl":
-            module_name = "foo.bar"
+            module_name = "example.foo.bar"
 
             functions = ["foo"]
             classes = []
@@ -29,7 +29,7 @@ def foo(a: int, b: int):
             """
 
         case "/foo/baz.libsl":
-            module_name = "foo.baz"
+            module_name = "example.foo.baz"
             functions = []
             classes = ["Baz"]
             gen_code = """
@@ -48,7 +48,7 @@ class Baz:
             """
 
         case "/foo/string.libsl":
-            module_name = "foo.string"
+            module_name = "example.foo.string"
             functions = ["get_name"]
             classes = []
             gen_code = """

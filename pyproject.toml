@@ -1,0 +1,37 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+    "setuptools>=61",
+    "setuptools-scm[toml]>=6.2.3",
+]
+
+[project]
+name = "spec-based-testing"
+version = "0.0.1"
+description = "Generate mocks based on LibSL formal specification files"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "Pavel Zhukov" },
+]
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Development Status :: 2 - Pre-Alpha",
+    "License :: OSI Approved :: Apache Software License",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development :: Testing :: Mocking",
+    "Framework :: Pytest",
+]
+dependencies = [
+    "pytest>=8.2.1",
+    "pytest-mock>=3.14.0",
+    "sre-yield>=1.2"
+]
+
+[project.entry-points.pytest11]
+autostub = "spec_based_testing.plugin"
+
+
+[tool.setuptools.packages.find]
+include = ["spec_based_testing*"]
