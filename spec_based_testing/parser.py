@@ -25,7 +25,7 @@ def foo(a: int, b: int):
     assert a > 0, "Requirement POSITIVE_A not met"
     assert b > 0, "Requirement POSITIVE_B not met"
 
-    return 100
+    return random.randint(0, 100)
             """
 
         case "/foo/baz.libsl":
@@ -44,7 +44,7 @@ class Baz:
 
         assert c > 0, "Requirement POSITIVE_C not met"
 
-        return self.a + self.b + c + 5
+        return self.a + self.b + c
             """
 
         case "/foo/string.libsl":

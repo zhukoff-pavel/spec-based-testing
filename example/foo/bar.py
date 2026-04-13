@@ -1,2 +1,4 @@
+import random
+
 def foo(a: int, b: int):
-    return a + b
+    return random.randint(0, 100)
